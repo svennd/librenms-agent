@@ -638,7 +638,7 @@ if ( $^O eq 'freebsd' ) {
 ####
 ####
 if ( $^O eq 'linux' ) {
-	my $output_raw    = `nfsstat -2 -3 -4 -v| sed 's/[0-9\.]*\%//g'`;
+	my $output_raw    = `nfsstat -2 -3 -4 -v 2>/dev/null| sed 's/[0-9\.]*\%//g'`;
 	my @output_split  = split( /\n/, $output_raw );
 	my $previous_line = '';
 	my $mode          = '';
